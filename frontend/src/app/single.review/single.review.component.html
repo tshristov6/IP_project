@@ -1,0 +1,21 @@
+<div class="container">
+  <form class="sin-rev" *ngIf="currentState === states.EDIT" [formGroup]="updateComment" (ngSubmit)="editComment()">
+    <label>Commenter:</label>
+    <input type="text" class="input" formControlName="pcs_name">
+    <br>
+    <label>Comment:</label>
+    <input type="text" class="input" formControlName="pcs_comment">
+    <br>
+    <button type="submit" class="edit">Submit</button>
+  </form>
+
+  <div class="sin-rev"*ngIf="currentState === states.VIEW">
+    <h3>You've chosen to edit a comment.<br> Please press Update</h3>
+    <button (click)="setState(states.EDIT)" class="edit">Update</button>
+  </div>
+
+  <a routerLink="/reviews/"><button class="return">Return to comment section</button></a>
+</div>
+
+
+

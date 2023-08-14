@@ -1,0 +1,28 @@
+<div *ngIf="currentState === states.VIEW">
+  <div class="controls">
+    <button class="write" (click)="writeComment()">Write a Comment</button>
+  </div>
+  <div class="container">
+    <ul *ngFor="let comment of comments">
+      <h3>{{comment.pcs_name}} commented:</h3>
+      <li>{{comment.pcs_comment}}</li>
+      <a routerLink="/reviews/{{ comment.pcs_comment_id }}"><button class="edit" >Edit Comment</button></a>
+      <button (click)="deleteComment(comment.pcs_comment_id)" class="delete">Delete Comment</button>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+<form class="input-div" *ngIf="currentState === states.CREATE" [formGroup]="postComment"(ngSubmit)="publishComment()">
+  <label>Coment Id: </label>
+  <input type="text" class="input" formControlName="pcs_comment_id">
+  <br>
+  <label>Commenter: </label>
+  <input type="text" class="input" formControlName="pcs_name">
+  <br>
+  <label>Comment: </label>
+  <textarea type="text" class="text" formControlName="pcs_comment"></textarea>
+  <br>
+  <button type="submit" class="write">Submit</button>
+</form>
+</div>

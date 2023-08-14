@@ -1,0 +1,87 @@
+<div class="wrapper">
+
+  <div class="container">
+    <div  (click)="getGPU()" class="box hvr-grow"><img class="image" src="assets/GPU.png"/></div>
+    <div (click)="getCPU()" class="box hvr-grow"><img class="image" src="assets/CPU.png"/></div>
+    <div (click)="getMOBO()" class="box hvr-grow"><img class="image" src="assets/mother.png"/></div>
+  </div>
+
+  <div class="container">
+    <div (click)="getPSU()" class="box hvr-grow"><img class="image-psu" src="assets/power.png"/></div>
+    <div (click)="getCooling()" class="box hvr-grow"><img class="image" src="assets/Cooler.png"/></div>
+    <div (click)="getRAM()" class="box hvr-grow"><img class="image-ram" src="assets/RAM.png"/></div>
+  </div>
+
+  <div class="gpu-component-database-info" *ngIf="showGPU">
+    <ul *ngFor="let gpu of gpus">
+      <h3>   {{gpu.pcs_name}}</h3>
+      <li> Gen:   {{gpu.pcs_gpu}}</li>
+      <li>Clock Speed:   {{gpu.pcs_clock_speed}}</li>
+      <li>Memory:   {{gpu.pcs_memory_size}}</li>
+      <li>Quantity:   {{gpu.pcs_quantity}}</li>
+      <li>Output Ports:   {{gpu.pcs_output_ports}}</li>
+
+    </ul>
+  </div>
+
+  <div class="cpu-component-database-info" *ngIf="showCPU">
+    <ul *ngFor="let cpu of cpus">
+      <h3>   {{cpu.pcs_name}}</h3>
+      <li>Clock Speed:  {{cpu.pcs_cloack_speed}}</li>
+      <li>Socket:   {{cpu.pcs_cpu_socket}}</li>
+      <li>Cores:   {{cpu.pcs_cores}}</li>
+      <li>Threads:   {{cpu.pcs_processor_num}}</li>
+      <li>Quantity:   {{cpu.pcs_quantity}}</li>
+
+    </ul>
+  </div>
+
+  <div class="mobo-component-database-info" *ngIf="showMOBO">
+    <ul *ngFor="let mobo of mobos">
+      <h3>   {{mobo.pcs_name}}</h3>
+      <li>Chipset:  {{mobo.pcs_chpset}}</li>
+      <li>Ram Slots:   {{mobo.pcs_socets}}</li>
+      <li>RAM Gen:   {{mobo.pcs_ram_slots}}</li>
+      <li>Quantity:   {{mobo.pcs_quantity}}</li>
+
+    </ul>
+  </div>
+
+  <div class="psu-component-database-info" *ngIf="showPSU">
+    <ul *ngFor="let psu of psus">
+      <h3>   {{psu.pcs_name}}</h3>
+      <li>Brand:   {{psu.pcs_brand}}</li>
+      <li>Type:  {{psu.pcs_connector_type}}</li>
+      <li>Wattage:   {{psu.pcs_wattage}}</li>
+      <li>Cooling:   {{psu.pcs_cooling_method}}</li>
+      <li>Quantity:   {{psu.pcs_quantity}}</li>
+
+    </ul>
+  </div>
+
+  <div class="cooling-component-database-info" *ngIf="showCooling">
+    <ul *ngFor="let cooler of coolers">
+      <h3>   {{cooler.pcs_name}}</h3>
+      <li>Brand:   {{cooler.pcs_brand}}</li>
+      <li>Type:   {{cooler.pcs_power_connector_type}}</li>
+      <li>Colling Method:  {{cooler.pcs_cooling_type}}</li>
+      <li>Quantity:   {{cooler.pcs_quantity}}</li>
+
+
+    </ul>
+  </div>
+
+  <div class="ram-component-database-info" *ngIf="showRAM">
+    <ul *ngFor="let ram of rams">
+      <h3>   {{ram.pcs_name}}</h3>
+      <li>Capacity:   {{ram.pcs_capacity}}</li>
+      <li>Speed:   {{ram.pcs_cloack_speed}}</li>
+      <li>Compatability:  {{ram.pcs_compatibility}}</li>
+      <li>Quantity:   {{ram.pcs_quantity}}</li>
+
+    </ul>
+  </div>
+
+
+</div>
+

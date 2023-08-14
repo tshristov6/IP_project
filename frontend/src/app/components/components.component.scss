@@ -1,0 +1,76 @@
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5.2%;
+
+}
+
+.box {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  background-color: #f3e9db;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.image {
+  max-width: 80%;
+  max-height: 80%;
+  margin-left: 28%;
+  margin-top: 5%;
+}
+
+.gpu-component-database-info, .ram-component-database-info, .cooling-component-database-info, .psu-component-database-info, .cpu-component-database-info, .mobo-component-database-info {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  ul {
+    max-width: 50%;
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+
+
+
+
+.image-psu {
+  max-width: 72%;
+  max-height: 72%;
+  margin-left: 20%;
+  margin-top: 7%;
+}
+
+.image-ram {
+  max-width: 72%;
+  max-height: 72%;
+  margin-left: 14%;
+  margin-top: 10%;
+}
+
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.05);
+}
+

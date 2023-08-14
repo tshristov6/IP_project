@@ -1,0 +1,13 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+router-outlet {
+  flex: 1;
+}
+
+app-footer {
+  margin-top: auto;
+}
